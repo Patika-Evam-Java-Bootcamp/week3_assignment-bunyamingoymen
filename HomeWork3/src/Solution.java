@@ -50,7 +50,7 @@ public class Solution {
         Scanner s = new Scanner(System.in); // Kullanıcıdan veri almak için Scanner nesnesi oluşturuyoruz
         int n = s.nextInt(); // Kullanıcının kaç tane değer gireceğini tutmak için bir değişken oluşturuyoruz ve kullanıcının girdiği değeri buna atıyoruz.
 
-        LinkedList<Student> students = new LinkedList<Student>(); // Öğrencileri tutacak bir dizi oluşturuyoruz.
+        ArrayList<Student> students = new ArrayList<Student>(); // Öğrencileri tutacak bir dizi oluşturuyoruz.
 
         //Kullanıcının girdiği değer kadar for döngüsü oluşturuyoruz:
         for(int i = 0; i<=n; i++){
@@ -82,7 +82,7 @@ public class Solution {
                             Aşağıda bulunan collection.sort bu işe yaramaktadır.
                          */
                         Collections.sort(students, Comparator.comparing(Student::getCgpa).reversed().thenComparing(Student::getName).thenComparing(Student::getId));
-                        students.pop(); // Listeyi sıraladıktan sonra ilk değeri pop ederek en başarılı öğrenciyi listeden çıkartıyoruz.
+                        students.remove(0); // Listeyi sıraladıktan sonra ilk değeri silerek en başarılı öğrenciyi listeden çıkartıyoruz.
                     } // empty if sonu
                 }//else sonu
             } // if sonu
